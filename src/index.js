@@ -1,6 +1,6 @@
 class Plugin {
-  init() {
-
+  init([a, b]) {
+    return { a, b };
   }
 }
 

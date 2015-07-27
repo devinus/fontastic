@@ -1,16 +1,21 @@
 import gulp from 'gulp';
 import sourcemaps from 'gulp-sourcemaps';
 import babel from 'gulp-babel';
-import concat from 'gulp-concat';
 import eslint from 'gulp-eslint';
+import babelify from 'babelify';
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
 
 import { name as packageName } from './package.json';
 
 gulp.task('default', ['lint'], function() {
-  return gulp.src('src/**/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(babel({ loose: 'all' }))
-    .pipe(concat(`${packageName}.js`))
+  return browserify('./src/index.js', { debug: true })
+    .transform(babelify.configure({ loose: 'all' }))
+    .bundle()
+    .pipe(source(`${packageName}.js`))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'));
 });
