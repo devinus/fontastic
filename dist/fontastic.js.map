@@ -1,0 +1,1 @@
+{"version":3,"sources":["plugin.js"],"names":[],"mappings":";;;;;;IAAM,MAAM;WAAN,MAAM;0BAAN,MAAM;;;AAAN,QAAM,WACV,IAAI,GAAA,gBAAG,EAEN;;SAHG,MAAM;;;qBAMG,MAAM","file":"fontastic.js","sourcesContent":["class Plugin {\n  init() {\n\n  }\n}\n\nexport default Plugin;\n"],"sourceRoot":"/source/"}
