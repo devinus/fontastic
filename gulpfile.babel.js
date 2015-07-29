@@ -4,6 +4,7 @@ import babel from 'gulp-babel';
 import eslint from 'gulp-eslint';
 import babelify from 'babelify';
 import browserify from 'browserify';
+// import uglify from 'gulp-uglify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 
@@ -16,6 +17,7 @@ gulp.task('default', ['lint'], function() {
     .pipe(source(`${packageName}.js`))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
+    // .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'));
 });
