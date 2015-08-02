@@ -1,22 +1,14 @@
-import babel from 'gulp-babel';
 import babelify from 'babelify';
 import browserify from 'browserify';
 import buffer from 'vinyl-buffer';
 import eslint from 'gulp-eslint';
+import exorcist from 'exorcist';
+import filter from 'gulp-filter';
 import gulp from 'gulp';
 import rename from 'gulp-rename';
-import rimraf from 'gulp-rimraf';
 import source from 'vinyl-source-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
-import concat from 'gulp-concat';
-import merge from 'merge-stream';
-import copy from 'gulp-copy';
-import extractor from 'gulp-extract-sourcemap';
-import path from 'path';
-import filter from 'gulp-filter';
-import exorcist from 'exorcist';
-import transform from 'vinyl-transform';
 
 import { name as packageName } from './package.json';
 
