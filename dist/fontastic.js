@@ -22,4 +22,6 @@ module.exports = exports['default'];
 
 },{}]},{},[1])(1)
 });
+
+
 //# sourceMappingURL=fontastic.js.map
